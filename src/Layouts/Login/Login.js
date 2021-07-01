@@ -31,6 +31,7 @@ const Login = () => {
         const googleProvider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithPopup(googleProvider)
             .then((res) => {
+                // console.log(res.user);
                 const { photoURL, displayName, email } = res.user;
                 const siggedInUser = {
                     isSiggedIn: true,

@@ -10,8 +10,25 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import { useContext } from 'react';
+import { UserContext } from '../../App';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 const Dashboard = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [admins, setAdmins] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/checkAdmins', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify({ email: loggedInUser.email })
+        })
+            .then(res => res.json())
+            .then(data => setAdmins(data))
+    }, [])
+
     const routes = [
         {
             path: "/",
@@ -59,9 +76,13 @@ const Dashboard = () => {
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/my-services">My Services</Link></li>
                                     <li><Link to="/my-profile">My Profile</Link></li>
-                                    <li><Link to="/all-services">All services</Link></li>
-                                    <li><Link to="/add-service">Add services</Link></li>
-                                    <li><Link to="/add-admin">Add admin</Link></li>
+                                    {admins &&
+                                        <>
+                                            <li><Link to="/all-services">All services</Link></li>
+                                            <li><Link to="/add-service">Add services</Link></li>
+                                            <li><Link to="/add-admin">Add admin</Link></li>
+                                        </>
+                                    }
                                 </ul>
                             </div>
                             <button className="overall-btn">Log out</button>
@@ -94,7 +115,7 @@ const Dashboard = () => {
                     </div>
                 </div>
             </Router>
-        </div>
+        </div >
     );
 };
 

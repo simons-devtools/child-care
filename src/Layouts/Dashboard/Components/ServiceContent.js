@@ -2,19 +2,22 @@ import React from 'react';
 
 const ServiceContent = (props) => {
     const { service, handleCancelBtn } = props;
-    const { _id, name, image } = service;
+    const { name, image, price } = service.service;
+    // console.log(service);
 
     return (
-        <div className="dash-service">
-            <div>
-                <span><img src={image} className="img-fluid" alt="" /></span>
-                <span className="service-name">{name}</span>
-            </div>
-            <div>
-                <span className="status">Pending</span>
-                <span onClick={() => handleCancelBtn(_id)} className="cancel">Cancel</span>
-            </div>
-        </div>
+        <tbody>
+            <td><img src={image} alt="" /></td>
+            <td className="service-">{name}</td>
+            <td className="middle">{price}</td>
+            <td>{service.shipment.name}</td>
+            <td>{service.shipment.email}</td>
+            <td>{service.shipment.phone}</td>
+            <td>
+                <span className="pending">Pending</span>
+                <span onClick={() => handleCancelBtn(service._id)} className="cancel">Cancel</span>
+            </td>
+        </tbody>
     );
 };
 

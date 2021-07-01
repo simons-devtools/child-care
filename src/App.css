@@ -301,48 +301,48 @@ header {
 }
 
 /* Dashboard services styles */
-.dash-service-wrapper {
-    margin-right: 50px;
+.middle {
+    border-right: 2px solid tomato;
+}
+
+th, td {
+    padding: 5px 10px;
+    border-top: 1px solid blue;
+    border-bottom: 1px solid blue;
+}
+
+
+tbody img, .dash-service img {
+    height: 50px;
 }
 
 .dash-service {
     display: flex;
     justify-content: space-between;
+    padding: 10px 10px 10px 0;
+    margin-bottom: 20px;
     align-items: center;
-}
-
-.dash-service {
-    padding: 5px 0 10px 0;
-    margin: 20px 0 30px 0;
-    border-top: 1px solid #ece8e8;
-    border-bottom: 1px solid #ece8e8;
+    border-top: 1px solid dimgrey;
+    border-bottom: 1px solid dimgrey;
 }
 
 .dash-service span {
-    margin-right: 20px;
+    margin-right: 50px;
 }
 
-.dash-service img {
-    height: 50px;
-}
-
-.service-name {
-    font-weight: 400;
-    font-size: 24px;
-    color: dimgrey;
-}
-
-.status {
+.pending {
+    font-size: 12px;
     font-weight: 700;
     color: azure;
     background-color: #13b113;
     padding: 2px 10px 5px 10px;
+    margin: 0 10px 10px 0;
     border-radius: 20px;
     vertical-align: middle;
-    cursor: pointer;
 }
 
 .cancel {
+    font-size: 12px;
     font-weight: 700;
     color: azure;
     background-color: tomato;

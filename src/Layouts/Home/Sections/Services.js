@@ -46,7 +46,6 @@ const Services = () => {
                         <Modal
                             service={singleService}
                             modalCloseBtn={modalCloseBtn}
-                            loggedInUser={loggedInUser}
                         />
                     </div>
                 </div>

@@ -1,10 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useForm } from "react-hook-form";
-// npm install react-hook-form
+import { UserContext } from "../../../App";
 
 const Modal = (props) => {
-    const { service, modalCloseBtn, loggedInUser } = props;
-    const { image, name, description } = service;
+    const { service, modalCloseBtn } = props;
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const { image, name, price, description } = service;
     const { register, handleSubmit } = useForm();
 
     // Handle form Submition:
@@ -14,8 +16,8 @@ const Modal = (props) => {
             email: data.email,
             phone: data.phone,
         };
-        const serviceData = { image, name, description }
-        const newOrder = { loggedInUser, shipment: shipmentData, service: serviceData };
+        const serviceData = { price, name, image, description }
+        const newOrder = { ...loggedInUser, shipment: shipmentData, service: serviceData };
         // console.log(newOrder); // No 01
         fetch('http://localhost:5000/addOrder', {
             method: 'POST',
