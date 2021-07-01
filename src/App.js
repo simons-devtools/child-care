@@ -20,7 +20,7 @@ const App = () => {
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
       <Router>
-        {/* <p>{loggedInUser.email}</p> */}
+        <p>{loggedInUser.email}</p>
         <Switch>
           <PrivateRoute path="/dashboard">
             <Dashboard />

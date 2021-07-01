@@ -1,9 +1,11 @@
 import React from "react";
+import { useContext } from "react";
 import Container from 'react-bootstrap/Container';
 import { useForm } from "react-hook-form";
-// npm install react-hook-form
+import { UserContext } from "../../../App";
 
 const Messages = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit } = useForm();
 
     // Handle form Submition:
@@ -13,21 +15,25 @@ const Messages = () => {
             email: data.email,
             designation: data.designation,
             description: data.description,
+            image: loggedInUser.photo,
         };
-        const url = `http://localhost:5000/addReviews`;
-        // console.log(url); // No 02
-        // console.log(messagesData); // No 03
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(messagesData)
-        })
-            .then(res => {
-                // console.log('From server response', res) // No 04
-                alert('Your message is added to the mongodb server storage!');
-            });
+        // console.log(messagesData); // No 01
+        if (!loggedInUser.isSiggedIn) {
+            alert('Hey! Please sign in after follow this form.');
+        }
+        else {
+            fetch('http://localhost:5000/addReviews', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(messagesData)
+            })
+                .then(res => {
+                    // console.log('From server response', res) // No 02
+                    alert('Your message is added to the mongodb server storage!');
+                });
+        }
     };
 
     return (

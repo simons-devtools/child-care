@@ -203,6 +203,20 @@ header {
     border-radius: 50%;
 }
 
+.review h4 {
+    color: dimgrey;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.review strong {
+    color: #949292;
+}
+
+.review p {
+    color: #7c7979;
+}
+
 /* Contact section styles*/
 .contact-wrapper {
     padding: 20px;

@@ -3,6 +3,7 @@ import MyServices from './Sections/MyServices';
 import UserProfile from './Sections/UserProfile';
 import AddService from './Sections/AddService';
 import AddAdmin from './Sections/AddAdmin';
+import AllServices from './Sections/AllServices';
 import {
     BrowserRouter as Router,
     Switch,
@@ -24,9 +25,14 @@ const Dashboard = () => {
             main: () => <MyServices />
         },
         {
-            path: "/users-profile",
+            path: "/my-profile",
             sidebar: () => '',
             main: () => <UserProfile />
+        },
+        {
+            path: "/all-services",
+            sidebar: () => '',
+            main: () => <AllServices />
         },
         {
             path: "/add-service",
@@ -52,7 +58,8 @@ const Dashboard = () => {
                                 <ul>
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/my-services">My Services</Link></li>
-                                    <li><Link to="/users-profile">My Profile</Link></li>
+                                    <li><Link to="/my-profile">My Profile</Link></li>
+                                    <li><Link to="/all-services">All services</Link></li>
                                     <li><Link to="/add-service">Add services</Link></li>
                                     <li><Link to="/add-admin">Add admin</Link></li>
                                 </ul>
