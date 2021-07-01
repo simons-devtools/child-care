@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 // npm install react-hook-form
 
 const Modal = (props) => {
-    const { service, modalCloseBtn } = props;
+    const { service, modalCloseBtn, loggedInUser } = props;
     const { image, name, description } = service;
     const { register, handleSubmit } = useForm();
 
@@ -15,7 +15,7 @@ const Modal = (props) => {
             phone: data.phone,
         };
         const serviceData = { image, name, description }
-        const newOrder = { shipment: shipmentData, service: serviceData };
+        const newOrder = { loggedInUser, shipment: shipmentData, service: serviceData };
         // console.log(newOrder); // No 01
         fetch('http://localhost:5000/addOrder', {
             method: 'POST',

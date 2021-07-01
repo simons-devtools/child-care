@@ -1,11 +1,15 @@
 import React from 'react';
 import { useEffect } from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Modal from '../Components/Modal';
 import Service from '../Components/Service';
+import { UserContext } from '../../../App';
+import { useHistory } from 'react-router-dom';
 
 const Services = () => {
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const [allServices, setAllServives] = useState([]);
     const [singleService, setSingleService] = useState([]);
 
@@ -15,11 +19,16 @@ const Services = () => {
             .then(data => setAllServives(data))
     }, [])
 
+    const history = useHistory();
     const getServiceBtn = (addedService) => {
-        // console.log('Added by id', serv);
-        setSingleService(addedService);
-        const myModal = document.getElementById("myModal");
-        myModal.style.display = "block";
+        if (!loggedInUser.isSiggedIn) {
+            history.push('/login');
+        }
+        else {
+            setSingleService(addedService);
+            const myModal = document.getElementById("myModal");
+            myModal.style.display = "block";
+        }
     }
 
     function modalCloseBtn() {
@@ -37,6 +46,7 @@ const Services = () => {
                         <Modal
                             service={singleService}
                             modalCloseBtn={modalCloseBtn}
+                            loggedInUser={loggedInUser}
                         />
                     </div>
                 </div>
