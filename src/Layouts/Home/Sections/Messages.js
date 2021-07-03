@@ -22,7 +22,7 @@ const Messages = () => {
             alert('Hey! Please sign in after follow this form.');
         }
         else {
-            fetch('http://localhost:5000/addReviews', {
+            fetch('https://childserver.herokuapp.com/addReviews', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

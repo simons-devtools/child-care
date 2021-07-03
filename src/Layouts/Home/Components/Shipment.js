@@ -19,7 +19,7 @@ const Shipment = (props) => {
         const serviceData = { price, name, image, description }
         const newOrder = { ...loggedInUser, shipment: shipmentData, service: serviceData, orderId: orderId, status: 'pending' };
         console.log(newOrder); // No 01
-        fetch('http://localhost:5000/addOrder', {
+        fetch('https://childserver.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -12,7 +12,7 @@ const MyServices = () => {
 
     // Get users "WISHLIST PRODUCTS" from mongodb cloud:
     useEffect(() => {
-        fetch('http://localhost:5000/orders?email=' + loggedInUser.email, {
+        fetch('https://childserver.herokuapp.com/orders?email=' + loggedInUser.email, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -43,7 +43,7 @@ const MyServices = () => {
         const status = document.querySelector(".order-status").value;
         const newStatus = { status };
 
-        fetch(`http://localhost:5000/serviceUpdate/${serviceId}`, {
+        fetch(`https://childserver.herokuapp.com/serviceUpdate/${serviceId}`, {
             method: 'PATCH',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newStatus)

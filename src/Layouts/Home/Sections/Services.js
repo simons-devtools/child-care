@@ -14,7 +14,7 @@ const Services = () => {
     const [singleService, setSingleService] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://childserver.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setAllServives(data))
     }, [])

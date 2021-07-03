@@ -5,11 +5,11 @@ const OrderStatus = (props) => {
     const { _id, status } = singleServices;
 
     return (
-        <div>
+        <div className="update-statuss">
             <h2>Update Order status</h2>
             <input type="status" defaultValue={status} className="order-status" />
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum, earum quam molestias architecto fugit aliquam?</p>
-            <button onClick={() => updateStatus(_id)}>Update now</button>
+            <button onClick={() => updateStatus(_id)} className="overall-btn">Update Status</button>
         </div>
     );
 };

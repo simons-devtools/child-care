@@ -7,7 +7,7 @@ const AllServices = () => {
     const [allServices, setAllServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://childserver.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setAllServices(data))
     }, [])
@@ -21,7 +21,7 @@ const AllServices = () => {
     // Delete service from mongodb cloud:
     const handleDeleteBtn = (addedId) => {
         // console.log('Servicee id', addedId);
-        fetch(`http://localhost:5000/deleteServiceOne/${addedId}`, {
+        fetch(`https://childserver.herokuapp.com/deleteServiceOne/${addedId}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

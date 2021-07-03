@@ -16,7 +16,7 @@ const AddService = () => {
             description: data.description,
             image: photoUrl
         };
-        const url = `http://localhost:5000/addServices`;
+        const url = `https://childserver.herokuapp.com/addServices`;
         fetch(url, {
             method: 'POST',
             headers: {

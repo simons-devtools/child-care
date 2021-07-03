@@ -20,7 +20,7 @@ const Dashboard = () => {
     const [admins, setAdmins] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:5000/checkAdmins', {
+        fetch('https://childserver.herokuapp.com/checkAdmins', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })

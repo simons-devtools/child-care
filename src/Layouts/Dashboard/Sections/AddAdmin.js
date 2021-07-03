@@ -14,7 +14,7 @@ const AddAdmin = () => {
             phone: data.phone,
             image: photoUrl
         };
-        fetch('http://localhost:5000/addAdmins', {
+        fetch('https://childserver.herokuapp.com/addAdmins', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
