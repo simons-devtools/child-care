@@ -31,7 +31,7 @@ const Messages = () => {
             })
                 .then(res => {
                     // console.log('From server response', res) // No 02
-                    alert('Your message is added to the mongodb server storage!');
+                    alert('Your are successfully review our project');
                 });
         }
     };

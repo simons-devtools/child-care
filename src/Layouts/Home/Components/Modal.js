@@ -1,38 +1,9 @@
 import React from 'react';
-// import { useContext } from 'react';
-// import { useForm } from "react-hook-form";
-// import { UserContext } from "../../../App";
 import PaymentProccess from '../../PaymentProccess/PaymentProccess';
 
 const Modal = (props) => {
     const { service, modalCloseBtn } = props;
-    // const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { image, name, price, description } = service;
-    // const { register, handleSubmit } = useForm();
-
-    // // Handle form Submition:
-    // const onSubmit = (data) => {
-    //     let shipmentData = {
-    //         name: data.name,
-    //         email: data.email,
-    //         phone: data.phone,
-    //     };
-    //     const serviceData = { price, name, image, description }
-    //     const newOrder = { ...loggedInUser, shipment: shipmentData, service: serviceData, status: 'pending' };
-    //     console.log(newOrder); // No 01
-    //     fetch('https://childserver.herokuapp.com/addOrder', {
-    //         method: 'POST',
-    //         headers: {
-    //             'content-type': 'application/json'
-    //         },
-    //         body: JSON.stringify(newOrder)
-    //     })
-    //         .then(res => {
-    //             // console.log('From server response', res) // No 02
-    //             alert('Your service is added to the mongodb server storage!');
-    //             modalCloseBtn();
-    //         });
-    // };
 
     return (
         <div className="row">
@@ -43,18 +14,6 @@ const Modal = (props) => {
                         modalCloseBtn={modalCloseBtn}
                     />
                 </div>
-
-                {/* <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="modal-body-two">
-                        <div className="modal-body">
-                            <h3>Your contact information here</h3>
-                            <input placeholder="Your Name" type="name" {...register("name", { required: true })} />
-                            <input placeholder="Your Email" type="email" {...register("email", { required: true })} />
-                            <input placeholder="Your Phone" type="phone" {...register("phone", { required: true })} />
-                            <button type="submit" className="overall-btn">Submit now</button>
-                        </div>
-                    </div>
-                </form> */}
             </div>
 
             <div className="col-md-6">

@@ -18,7 +18,7 @@ const Shipment = (props) => {
         };
         const serviceData = { price, name, image, description }
         const newOrder = { ...loggedInUser, shipment: shipmentData, service: serviceData, orderId: orderId, status: 'pending' };
-        console.log(newOrder); // No 01
+        // console.log(newOrder); // No 01
         fetch('https://childserver.herokuapp.com/addOrder', {
             method: 'POST',
             headers: {
@@ -28,7 +28,7 @@ const Shipment = (props) => {
         })
             .then(res => {
                 // console.log('From server response', res) // No 02
-                alert('Your service is added to the mongodb server storage!');
+                alert('Your order is successfully');
                 modalCloseBtn();
             });
     };

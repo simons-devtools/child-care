@@ -25,7 +25,7 @@ const AddService = () => {
             body: JSON.stringify(servicesData)
         })
             .then(res => {
-                alert('Your service is added to the mongodb server storage!');
+                alert('Your service is added to the mongodb services storage!');
             });
     };
 

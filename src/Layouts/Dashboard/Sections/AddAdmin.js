@@ -22,7 +22,7 @@ const AddAdmin = () => {
             body: JSON.stringify(adminData)
         })
             .then(res => {
-                alert('Your service is added to the mongodb server storage!');
+                alert('Your admin is added to the mongodb admin storage!');
             });
     };
 

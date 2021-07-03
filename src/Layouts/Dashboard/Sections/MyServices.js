@@ -51,7 +51,7 @@ const MyServices = () => {
             .then(res => res.json())
             .then(result => {
                 if (result) {
-                    // alert('Your ordered service status is successfully updated.');
+                    alert('Your ordered service status is successfully updated');
                     modalCloseBtn();
                 }
             })

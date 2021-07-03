@@ -27,7 +27,7 @@ const AllServices = () => {
             .then(res => res.json())
             .then(result => {
                 // console.log('Deleted is', result);
-                alert('You sure successfully delete this service.');
+                alert('You are successfully delete this service.');
                 for (let i = 0; i < allServices.length; i++) {
                     const service = allServices[i];
                     if (service._id === addedId) {
