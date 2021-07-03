@@ -27,7 +27,7 @@ const Dashboard = () => {
         })
             .then(res => res.json())
             .then(data => setAdmins(data))
-    }, [])
+    })
 
     const routes = [
         {
@@ -65,13 +65,12 @@ const Dashboard = () => {
 
     return (
         <div>
-            <Link to="/home">Home</Link>
             <Router>
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-2">
                         <div className="sidebar-wrapper">
-                            <h2>Dashboard Menu</h2>
                             <div className="sidebar-menus">
+                                <h2>Dashboard</h2>
                                 <ul>
                                     <li><Link to="/">Home</Link></li>
                                     <li><Link to="/my-services">My Services</Link></li>
@@ -85,7 +84,7 @@ const Dashboard = () => {
                                     }
                                 </ul>
                             </div>
-                            <button className="overall-btn">Log out</button>
+                            <button onClick={() => setLoggedInUser({})} className="overall-btn">Log out</button>
                         </div>
                         <Switch>
                             {routes.map((route, index) => (
@@ -99,7 +98,7 @@ const Dashboard = () => {
                         </Switch>
                     </div>
 
-                    <div className="col-md-9">
+                    <div className="col-md-10">
                         <div className="dash-service-wrapper">
                             <Switch>
                                 {routes.map((route, index) => (

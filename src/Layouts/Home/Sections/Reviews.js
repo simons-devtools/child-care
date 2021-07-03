@@ -15,10 +15,10 @@ const Reviews = () => {
     }, [])
 
     return (
-        <section>
+        <section className="review-wrapper">
             <Container>
                 <div className="review-section">
-                    <h1 className="text-center mb-5 text-muted border-bottom">parents review</h1>
+                    <h1 className="text-center mb-5">Project reviewer</h1>
                 </div>
                 <div className="row">
                     {

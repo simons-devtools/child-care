@@ -5,7 +5,7 @@ const Team = (props) => {
 
     return (
         <div className="col-md-3">
-            <div className="teams text-center">
+            <div className="teams text-center mb-5">
                 <img src={image} className="img-fluid" alt="" />
                 <h5 className="text-uppercase">{name}</h5>
                 <strong>{title}</strong>

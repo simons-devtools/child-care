@@ -12,26 +12,49 @@ const AllServices = () => {
             .then(data => setAllServices(data))
     }, [])
 
-    // .....
+    // Update service from mongodb cloud:
+    const handleUpdateBtn = (addedService) => {
+        console.log(addedService);
+    }
+
+
+    // Delete service from mongodb cloud:
     const handleDeleteBtn = (addedId) => {
-        console.log('Servicee id', addedId);
+        // console.log('Servicee id', addedId);
+        fetch(`http://localhost:5000/deleteServiceOne/${addedId}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(result => {
+                // console.log('Deleted is', result);
+                alert('You sure successfully delete this service.');
+                for (let i = 0; i < allServices.length; i++) {
+                    const service = allServices[i];
+                    if (service._id === addedId) {
+                        allServices.splice(i, 1);
+                        let newServices = [...allServices];
+                        setAllServices(newServices);
+                    }
+                }
+            })
     }
 
     return (
-        <>
-            <h2>All services component</h2>
+        <div style={{ margin: '20px 10px' }}>
+            <h2>Your all services is below</h2>
             <div>
                 {
                     allServices.map(service =>
                         <AllServiceContent
                             key={service._id}
                             service={service}
+                            handleUpdateBtn={handleUpdateBtn}
                             handleDeleteBtn={handleDeleteBtn}
                         />
                     )
                 }
             </div>
-        </>
+        </div>
     );
 };
 

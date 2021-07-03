@@ -1,6 +1,9 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import image from '../../../assets/images/background.jpg';
+import image1 from '../../../assets/images/member-1.jpg';
+import image2 from '../../../assets/images/member-2.jpg';
+import image3 from '../../../assets/images/member-3.jpg';
+import image4 from '../../../assets/images/member-4.jpg';
 import facebook from '../../../assets/icons/facebook.png';
 import Team from '../Components/Team';
 
@@ -8,39 +11,39 @@ const Teams = () => {
     const servicesArray = [
         {
             "_id": 1,
-            "image": image,
+            "image": image1,
             "facebook": facebook,
             "twitter": facebook,
             "google": facebook,
-            "name": "Sr. Stive Jobs",
-            "title": "Apple ceo",
+            "name": "Chris brown",
+            "title": "Project seo",
         },
         {
             "_id": 2,
-            "image": image,
+            "image": image2,
             "facebook": facebook,
             "twitter": facebook,
             "google": facebook,
-            "name": "Sr. Bil Gates",
-            "title": "Microsoft seo",
+            "name": "Lily watson",
+            "title": "Head learner",
         },
         {
             "_id": 3,
-            "image": image,
+            "image": image3,
             "facebook": facebook,
             "twitter": facebook,
             "google": facebook,
-            "name": "Sr. Sundar pichai",
-            "title": "Google ceo",
+            "name": "Adreash gragory",
+            "title": "Project manager",
         },
         {
             "_id": 4,
-            "image": image,
+            "image": image4,
             "facebook": facebook,
             "twitter": facebook,
             "google": facebook,
-            "name": "Sr. Mark Jocker",
-            "title": "Facebook ceo",
+            "name": "Luija chosta",
+            "title": "Department controler",
         },
     ];
 

@@ -17,8 +17,6 @@ const AddService = () => {
             image: photoUrl
         };
         const url = `http://localhost:5000/addServices`;
-        // console.log(url); // No 02
-        // console.log(servicesData); // No 03
         fetch(url, {
             method: 'POST',
             headers: {
@@ -27,9 +25,6 @@ const AddService = () => {
             body: JSON.stringify(servicesData)
         })
             .then(res => {
-                // console.log('From server response', res) // No 04
-                // const message = document.getElementById("myMessage");
-                // message.style.display = "block";
                 alert('Your service is added to the mongodb server storage!');
             });
     };
@@ -53,8 +48,8 @@ const AddService = () => {
     }
 
     return (
-        <>
-            <h2>Add service component</h2>
+        <div style={{ margin: '20px 10px' }}>
+            <h2>Add your service</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-contents">
                     <input type="name" placeholder="Service Name" {...register("name", { required: true })} /> <br />
@@ -64,7 +59,7 @@ const AddService = () => {
                     <button type="submit" className="overall-btn">Post now</button>
                 </div>
             </form>
-        </>
+        </div>
     );
 };
 
