@@ -25,9 +25,9 @@ const ServiceContent = (props) => {
             <td>{name}</td>
             <td className="middle">{price}</td>
             <td>{service.shipment.name}</td>
-            <td>{service.shipment.email}</td>
-            <td className="phonee">{service.shipment.phone}</td>
-            <td>{service.orderId}</td>
+            <td className="phonee">{service.shipment.email}</td>
+            <td>{service.shipment.phone}</td>
+            <td className="phonee">{service.orderId}</td>
             <td>
                 <span className="user-btn status">{service.status}</span>
                 {admins && <button onClick={() => handleUpdateBtn(service)} className="user-btn view">update</button>}
