@@ -1,7 +1,7 @@
 import React from 'react';
 import { useContext } from 'react';
 import { useForm } from "react-hook-form";
-import { UserContext } from "../../../App";
+import { UserContext } from "../../App";
 
 const Shipment = (props) => {
     const { service, modalCloseBtn, orderId } = props;

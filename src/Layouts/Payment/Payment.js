@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { CardElement, Elements, useElements, useStripe } from "@stripe/react-stripe-js";
-import "./PaymentProccess.css";
-import Shipment from '../Home/Components/Shipment';
+import "./Payment.css";
+import Shipment from './Shipment';
 
 const CARD_OPTIONS = {
     iconStyle: "solid",
@@ -209,7 +209,7 @@ const PaymentProccess = (props) => {
                 </fieldset>
                 {error && <ErrorMessage>{error.message}</ErrorMessage>}
                 <SubmitButton processing={processing} error={error} disabled={!stripe}>
-                    Pay $25
+                    Payment Now
                 </SubmitButton>
             </form>
         );

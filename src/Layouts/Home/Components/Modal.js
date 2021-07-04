@@ -1,5 +1,5 @@
 import React from 'react';
-import PaymentProccess from '../../PaymentProccess/PaymentProccess';
+import Payment from '../../Payment/Payment';
 
 const Modal = (props) => {
     const { service, modalCloseBtn } = props;
@@ -9,7 +9,7 @@ const Modal = (props) => {
         <div className="row">
             <div className="col-md-6">
                 <div className="modal-body">
-                    <PaymentProccess
+                    <Payment
                         service={service}
                         modalCloseBtn={modalCloseBtn}
                     />
