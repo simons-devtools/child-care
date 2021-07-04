@@ -79,9 +79,9 @@ const MyServices = () => {
                             <th>Services name</th>
                             <th className="middle">Price($)</th>
                             <th>Name</th>
-                            <th>Email address</th>
-                            <th className="phonee">Phone No</th>
-                            <th>Order ID of service</th>
+                            <th className="phonee">Email address</th>
+                            <th>Phone No</th>
+                            <th className="phonee">Order ID of service</th>
                             <th>Service status</th>
                         </thead>
                         {
