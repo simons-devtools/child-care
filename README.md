@@ -1,4 +1,4 @@
-# Child-care project overview
+## Child-care project overview
 
 This project was created with reactJS and nodeJS [Live link...](https://childserver.herokuapp.com).
 
