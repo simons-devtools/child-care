@@ -1,8 +1,5 @@
 ## Child-care project overview
-
 This project was created with reactJS and nodeJS [Live link...](https://childserver.herokuapp.com).
-
-## Child-care — Website | Client-code | Server-code
 July 2021 — August 2021
 
 1. Built a MERN stack web application with dynamic child-care activities.
@@ -16,7 +13,5 @@ React.js, REST-API, React-router, Firebase, Node.js, Express.js, MongoDB, Heroku
 
 
 ## Available Scripts
-
 In the project directory, you can run:
-
 ### `npm start`
